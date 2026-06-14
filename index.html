@@ -8,7 +8,7 @@
   <meta property="og:title" content="Tunelo — Free music that plays even offline" />
   <meta property="og:description" content="Free music from independent artists. Offline after one play. Less data. Made for everyone." />
   <meta property="og:type" content="website" />
-  <link rel="icon" type="image/png" href="favicon.ico" />
+  <link rel="icon" type="image/png" href="favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -210,7 +210,7 @@
         <p>See which artists, albums, and songs listeners can't stop replaying — refreshed every day.</p>
       </div>
       <div class="chart-preview">
-        <div class="chart-card">
+        <div class="chart-card" id="chartCard">
           <div class="chart-row">
             <span class="chart-rank">1</span>
             <span class="chart-art">🎧</span>
@@ -242,7 +242,7 @@
             <span class="chart-plays">— plays</span>
           </div>
           <!-- Coming-soon overlay -->
-          <div class="chart-soon">
+          <div class="chart-soon" id="chartSoon">
             <span class="badge">📊 Charts coming soon</span>
             <p>As listeners and artists join, the real Daily Top 50 goes live here — ranked by actual plays and likes. Be one of the first artists on the board.</p>
             <a href="#artists" class="btn btn-primary">🎙️ Get your music in</a>
@@ -355,5 +355,32 @@
     })();
   </script>
 
+  <!-- Live charts from the Tunelo backend -->
+  <script id="charts-live">
+    (function () {
+      var API = 'https://1y516t1epd.execute-api.ap-south-1.amazonaws.com/v1';
+      function esc(s){var d=document.createElement('div');d.textContent=s==null?'':String(s);return d.innerHTML;}
+      fetch(API + '/charts').then(function(r){return r.json();}).then(function(d){
+        if (!d || !d.items || !d.items.length) return;
+        var card = document.getElementById('chartCard');
+        var soon = document.getElementById('chartSoon');
+        if (soon) soon.style.display = 'none';
+        var html = '';
+        d.items.slice(0, 10).forEach(function (t) {
+          var plays = (t.plays || 0).toLocaleString();
+          var sub = esc(t.artist) + (t.genre ? ' · ' + esc(t.genre) : '');
+          html += '<div class="chart-row">'
+            + '<span class="chart-rank">' + t.rank + '</span>'
+            + '<span class="chart-art">🎵</span>'
+            + '<span class="chart-meta"><b>' + esc(t.title) + '</b><span>' + sub + '</span></span>'
+            + '<span class="chart-plays">' + plays + ' plays</span>'
+            + '</div>';
+        });
+        if (card) card.innerHTML = html;
+        var note = document.querySelector('.chart-note');
+        if (note) note.textContent = 'Live · Top songs by real plays · updated daily';
+      }).catch(function(){});
+    })();
+  </script>
 </body>
 </html>
