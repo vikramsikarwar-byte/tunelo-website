@@ -157,7 +157,7 @@
         </ul>
         <a href="mailto:support@tunelo.live?subject=I%20want%20to%20share%20my%20music%20on%20Tunelo" class="btn btn-primary">🎙️ Apply for artist access</a>
       </div>
-      <div class="artist-cards">
+      <div class="artist-cards" id="artistCards">
         <div class="artist-card">
           <div class="artist-pic">🎧</div>
           <div class="ac-meta"><b>Aurora Skies</b><span>Lo-Fi · Chill</span></div>
@@ -352,6 +352,25 @@
       Array.prototype.forEach.call(document.querySelectorAll('[data-welcome-dismiss]'), function (el) {
         el.addEventListener('click', close);
       });
+    })();
+  </script>
+
+  <!-- Real artists from the Tunelo backend -->
+  <script id="artists-live">
+    (function(){
+      var API='https://1y516t1epd.execute-api.ap-south-1.amazonaws.com/v1';
+      function esc(s){var d=document.createElement('div');d.textContent=s==null?'':String(s);return d.innerHTML;}
+      fetch(API+'/artists').then(function(r){return r.json();}).then(function(d){
+        if(!d||!d.items||!d.items.length)return;
+        var el=document.getElementById('artistCards');if(!el)return;
+        el.innerHTML=d.items.slice(0,6).map(function(a){
+          var pic=a.photoUrl
+            ? '<div class="artist-pic" style="background-image:url('+esc(a.photoUrl)+');background-size:cover;background-position:center"></div>'
+            : '<div class="artist-pic">🎵</div>';
+          return '<div class="artist-card">'+pic+'<div class="ac-meta"><b>'+esc(a.name)+'</b><span>'+(esc(a.bio)||'Independent artist')+'</span></div>'
+            +'<span class="ac-count">'+a.songCount+' song'+(a.songCount==1?'':'s')+'</span></div>';
+        }).join('');
+      }).catch(function(){});
     })();
   </script>
 
