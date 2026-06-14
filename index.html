@@ -13,8 +13,30 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="artists.css" />
 </head>
 <body>
+
+  <!-- Welcome popup (shown once per visitor) -->
+  <div class="welcome-overlay" id="welcome">
+    <div class="welcome-modal">
+      <button class="welcome-close" id="welcomeClose" aria-label="Close">&times;</button>
+      <h3>Welcome to Tunelo 🎵</h3>
+      <p class="wsub">Free music for everyone — and a free home for independent artists. Where would you like to go?</p>
+      <div class="welcome-paths">
+        <a href="#download" class="welcome-path" data-welcome-dismiss>
+          <span class="wp-ic">🎧</span>
+          <span class="wp-t">I'm a Listener</span>
+          <span class="wp-d">Get the app · free</span>
+        </a>
+        <a href="#artists" class="welcome-path" data-welcome-dismiss>
+          <span class="wp-ic">🎙️</span>
+          <span class="wp-t">I'm an Artist</span>
+          <span class="wp-d">Submit music · see charts</span>
+        </a>
+      </div>
+    </div>
+  </div>
 
   <!-- Nav -->
   <nav class="nav">
@@ -23,6 +45,7 @@
       <div class="nav-links">
         <a href="#features">Features</a>
         <a href="#artists">Artists</a>
+        <a href="#charts">Charts</a>
         <a href="#pricing">Pricing</a>
         <a href="mailto:support@tunelo.live">Support</a>
       </div>
@@ -46,6 +69,7 @@
         <p class="store-note">Coming soon to the App Store &amp; Google Play.</p>
       </div>
 
+      <!-- Phone mockup -->
       <div class="phone-wrap">
         <div class="phone">
           <div class="phone-notch"></div>
@@ -131,7 +155,7 @@
           <li>Reach listeners even on slow or no internet</li>
           <li>Grow your audience as Tunelo grows</li>
         </ul>
-        <a href="mailto:support@tunelo.live?subject=I%20want%20to%20share%20my%20music%20on%20Tunelo" class="btn btn-primary">🎙️ Submit your music</a>
+        <a href="mailto:support@tunelo.live?subject=I%20want%20to%20share%20my%20music%20on%20Tunelo" class="btn btn-primary">🎙️ Apply for artist access</a>
       </div>
       <div class="artist-cards">
         <div class="artist-card">
@@ -149,6 +173,82 @@
           <div class="ac-meta"><b>Midnight Cassette</b><span>Indie · Pop</span></div>
           <span class="ac-count">15 songs</span>
         </div>
+      </div>
+    </div>
+
+    <!-- How to submit: 3 steps -->
+    <div class="container" style="margin-top:48px;">
+      <div class="section-head">
+        <h2>Get on Tunelo in 3 steps</h2>
+        <p>Simple, free, and fast — your music live for listeners everywhere.</p>
+      </div>
+      <div class="how-steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <h4>Apply for access</h4>
+          <p>Tell us about yourself and your music. We'll set you up with an artist account on Tunelo — completely free.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <h4>Upload your songs</h4>
+          <p>From your artist dashboard, add your tracks, artwork, and details. You keep all your rights — always.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <h4>Go live &amp; climb the charts</h4>
+          <p>Publish and your music appears in the Tunelo app for everyone. Watch your plays grow on the Daily Top 50.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Charts -->
+  <section id="charts" class="charts-wrap">
+    <div class="container">
+      <div class="section-head">
+        <h2>The Tunelo <span class="grad-text">Daily Top 50</span></h2>
+        <p>See which artists, albums, and songs listeners can't stop replaying — refreshed every day.</p>
+      </div>
+      <div class="chart-preview">
+        <div class="chart-card">
+          <div class="chart-row">
+            <span class="chart-rank">1</span>
+            <span class="chart-art">🎧</span>
+            <span class="chart-meta"><b>Midnight Drive</b><span>Aurora Skies · Lo-Fi</span></span>
+            <span class="chart-plays">— plays</span>
+          </div>
+          <div class="chart-row">
+            <span class="chart-rank">2</span>
+            <span class="chart-art">🎸</span>
+            <span class="chart-meta"><b>Neon Highway</b><span>Neon Vibes · Electronic</span></span>
+            <span class="chart-plays">— plays</span>
+          </div>
+          <div class="chart-row">
+            <span class="chart-rank">3</span>
+            <span class="chart-art">🎹</span>
+            <span class="chart-meta"><b>Paper Planes</b><span>Midnight Cassette · Indie</span></span>
+            <span class="chart-plays">— plays</span>
+          </div>
+          <div class="chart-row">
+            <span class="chart-rank">4</span>
+            <span class="chart-art">🎤</span>
+            <span class="chart-meta"><b>City Lights</b><span>Echo Park · Pop</span></span>
+            <span class="chart-plays">— plays</span>
+          </div>
+          <div class="chart-row">
+            <span class="chart-rank">5</span>
+            <span class="chart-art">🥁</span>
+            <span class="chart-meta"><b>Slow Burn</b><span>Velvet Room · R&amp;B</span></span>
+            <span class="chart-plays">— plays</span>
+          </div>
+          <!-- Coming-soon overlay -->
+          <div class="chart-soon">
+            <span class="badge">📊 Charts coming soon</span>
+            <p>As listeners and artists join, the real Daily Top 50 goes live here — ranked by actual plays and likes. Be one of the first artists on the board.</p>
+            <a href="#artists" class="btn btn-primary">🎙️ Get your music in</a>
+          </div>
+        </div>
+        <p class="chart-note">Updated daily · ranked by real plays &amp; likes once we launch.</p>
       </div>
     </div>
   </section>
@@ -223,6 +323,8 @@
         <a href="/" class="logo"><span class="logo-mark-img"></span><span>Tunelo</span></a>
         <div class="footer-links">
           <a href="#features">Features</a>
+          <a href="#artists">For Artists</a>
+          <a href="#charts">Charts</a>
           <a href="#pricing">Pricing</a>
           <a href="privacy.html">Privacy Policy</a>
           <a href="terms.html">Terms of Service</a>
@@ -232,6 +334,26 @@
       <p class="copyright">© 2026 Tunelo. All rights reserved. Made with ♪ for music lovers.</p>
     </div>
   </footer>
+
+  <!-- Welcome popup: show once per visitor -->
+  <script>
+    (function () {
+      var KEY = 'tunelo_welcomed';
+      var overlay = document.getElementById('welcome');
+      if (!overlay) return;
+      function close() { overlay.classList.remove('show'); try { localStorage.setItem(KEY, '1'); } catch (e) {} }
+      try {
+        if (!localStorage.getItem(KEY)) {
+          setTimeout(function () { overlay.classList.add('show'); }, 900);
+        }
+      } catch (e) {}
+      document.getElementById('welcomeClose').addEventListener('click', close);
+      overlay.addEventListener('click', function (e) { if (e.target === overlay) close(); });
+      Array.prototype.forEach.call(document.querySelectorAll('[data-welcome-dismiss]'), function (el) {
+        el.addEventListener('click', close);
+      });
+    })();
+  </script>
 
 </body>
 </html>
