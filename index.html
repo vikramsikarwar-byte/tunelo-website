@@ -10,6 +10,33 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://tunelo.live" />
     <link rel="icon" type="image/png" href="https://d1fr34e73b4to8.cloudfront.net/web/logo.png" />
+    <script>
+      // Swap the placeholder "T" logo badges for the real Tunelo logo once the page renders.
+      (function () {
+        var LOGO = 'https://d1fr34e73b4to8.cloudfront.net/web/logo.png';
+        function fix() {
+          var n = 0;
+          document.querySelectorAll('div').forEach(function (e) {
+            if ((e.textContent || '').trim() !== 'T') return;
+            var w = e.offsetWidth, h = e.offsetHeight;
+            if (w < 18 || w > 64 || Math.abs(w - h) > 8) return;
+            if ((getComputedStyle(e).backgroundImage || '').indexOf('gradient') === -1) return;
+            e.textContent = '';
+            e.style.backgroundImage = "url('" + LOGO + "')";
+            e.style.backgroundColor = 'transparent';
+            e.style.backgroundSize = 'cover';
+            e.style.backgroundPosition = 'center';
+            n++;
+          });
+          return n;
+        }
+        var tries = 0;
+        var iv = setInterval(function () {
+          fix();
+          if (++tries > 40) clearInterval(iv); // ~12s of retries, then stop
+        }, 300);
+      })();
+    </script>
     <style>
       * {
         margin: 0;
