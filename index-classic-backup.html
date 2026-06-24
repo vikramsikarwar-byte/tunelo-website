@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tunelo — Free music that plays even offline</title>
+  <meta name="description" content="Tunelo is a free music app for everyone. Discover independent artists, listen offline after one play, and use less data. 1 month free, then ₹79/month." />
+  <meta property="og:title" content="Tunelo — Free music that plays even offline" />
+  <meta property="og:description" content="Free music from independent artists. Offline after one play. Less data. Made for everyone." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="artists.css" />
+</head>
+<body>
+
+  <!-- Welcome popup (shown once per visitor) -->
+  <div class="welcome-overlay" id="welcome">
+    <div class="welcome-modal">
+      <button class="welcome-close" id="welcomeClose" aria-label="Close">&times;</button>
+      <h3>Welcome to Tunelo 🎵</h3>
+      <p class="wsub">Free music for everyone — and a free home for independent artists. Where would you like to go?</p>
+      <div class="welcome-paths">
+        <a href="#download" class="welcome-path" data-welcome-dismiss>
+          <span class="wp-ic">🎧</span>
+          <span class="wp-t">I'm a Listener</span>
+          <span class="wp-d">Get the app · free</span>
+        </a>
+        <a href="https://d1fr34e73b4to8.cloudfront.net/artist/index.html" class="welcome-path">
+          <span class="wp-ic">🎙️</span>
+          <span class="wp-t">I'm an Artist</span>
+          <span class="wp-d">Open Artist Studio</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Nav -->
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="/" class="logo"><span class="logo-mark-img"></span><span>Tunelo</span></a>
+      <div class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#artists">Artists</a>
+        <a href="#charts">Charts</a>
+        <a href="#pricing">Pricing</a>
+        <a href="https://d1fr34e73b4to8.cloudfront.net/artist/index.html">Artist Studio</a>
+      </div>
+      <a href="#download" class="btn btn-primary">Get the app</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="hero-glow"></div>
+    <div class="hero-glow two"></div>
+    <div class="container hero-grid">
+      <div>
+        <span class="badge">🎵 Free for everyone · 1 month on us</span>
+        <h1>Music that plays even when the <span class="grad-text">internet doesn't.</span></h1>
+        <p class="sub">Real music from independent artists — free to start. Play any track once and Tunelo saves it, so it keeps playing offline with no interruptions and far less data. Made for everyone, everywhere.</p>
+        <div class="hero-cta">
+          <a href="#download" class="btn btn-primary">▶ Start listening free</a>
+          <a href="#artists" class="btn btn-ghost">For artists</a>
+        </div>
+        <p class="store-note">Coming soon to the App Store &amp; Google Play.</p>
+      </div>
+
+      <!-- Phone mockup -->
+      <div class="phone-wrap">
+        <div class="phone">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <div class="p-top">
+              <div>
+                <div class="p-hello">Good vibes ✨</div>
+                <div class="p-brand">Tunelo</div>
+              </div>
+              <div class="p-avatar"></div>
+            </div>
+            <div class="p-art"></div>
+            <div class="p-title">Midnight Drive</div>
+            <div class="p-artist">Aurora Skies</div>
+            <div class="p-bar"></div>
+            <div class="p-controls">
+              <span class="p-ctrl">⏮</span>
+              <span class="p-play">⏸</span>
+              <span class="p-ctrl">⏭</span>
+            </div>
+            <div class="p-mini">
+              <div class="p-mini-art"></div>
+              <div class="p-mini-meta"><b>Saved offline ✓</b><span>Plays with no internet</span></div>
+              <span class="p-ctrl" style="font-size:16px">▶</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Features -->
+  <section id="features">
+    <div class="container">
+      <div class="section-head">
+        <h2>Built different.</h2>
+        <p>The features other music apps don't give you.</p>
+      </div>
+      <div class="features">
+        <div class="feature">
+          <div class="feature-ic">📥</div>
+          <h3>Offline after one play</h3>
+          <p>Listen to a song once and Tunelo keeps it for you — replay it anytime with zero internet, zero interruptions. No manual downloads.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-ic">📉</div>
+          <h3>Uses less data</h3>
+          <p>Smart Data-Saver mode streams light on mobile data and full quality on Wi-Fi — so you enjoy more music for less.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-ic">✨</div>
+          <h3>Premium, beautiful, fast</h3>
+          <p>A gorgeous, gesture-smooth player designed to feel premium from the first tap — made for mobile, nothing extra.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-ic">🎤</div>
+          <h3>Real independent artists</h3>
+          <p>Discover fresh music from independent artists across every genre and mood — a library that grows as more artists join.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-ic">❤️</div>
+          <h3>Your library, synced</h3>
+          <p>Like songs, build your collection, and pick up right where you left off. Your music, exactly how you like it.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-ic">🚫</div>
+          <h3>No clutter, no noise</h3>
+          <p>Just your music. A clean, focused experience with none of the bloat — so you spend time listening, not searching.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- For Artists -->
+  <section id="artists" class="artists-wrap">
+    <div class="container artists-inner">
+      <div class="artists-copy">
+        <h2>Are you an artist? <span class="grad-text">Get heard.</span></h2>
+        <p class="lead">Tunelo is built for independent artists. Share your music with listeners everywhere — completely free, no fees, no catch. You keep your rights; we help people discover you.</p>
+        <ul class="artist-perks">
+          <li>100% free to share your music — no charges, ever</li>
+          <li>Your name &amp; photo featured, with your full song list</li>
+          <li>Reach listeners even on slow or no internet</li>
+          <li>Grow your audience as Tunelo grows</li>
+        </ul>
+        <a href="https://d1fr34e73b4to8.cloudfront.net/artist/index.html" class="btn btn-primary">🎙️ Open Artist Studio — upload free</a>
+      </div>
+      <div class="artist-cards" id="artistCards">
+        <div class="artist-card">
+          <div class="artist-pic">🎧</div>
+          <div class="ac-meta"><b>Aurora Skies</b><span>Lo-Fi · Chill</span></div>
+          <span class="ac-count">12 songs</span>
+        </div>
+        <div class="artist-card">
+          <div class="artist-pic">🎸</div>
+          <div class="ac-meta"><b>Neon Vibes</b><span>Electronic</span></div>
+          <span class="ac-count">8 songs</span>
+        </div>
+        <div class="artist-card">
+          <div class="artist-pic">🎹</div>
+          <div class="ac-meta"><b>Midnight Cassette</b><span>Indie · Pop</span></div>
+          <span class="ac-count">15 songs</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- How to submit: 3 steps -->
+    <div class="container" style="margin-top:48px;">
+      <div class="section-head">
+        <h2>Get on Tunelo in 3 steps</h2>
+        <p>Simple, free, and fast — your music live for listeners everywhere.</p>
+      </div>
+      <div class="how-steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <h4>Create your account</h4>
+          <p>Open the <a href="https://d1fr34e73b4to8.cloudfront.net/artist/index.html" style="color:var(--accent-2)">Artist Studio</a> and sign up free with email or Google — takes a minute.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <h4>Upload your songs</h4>
+          <p>From your artist dashboard, add your tracks, artwork, and details. You keep all your rights — always.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <h4>Go live &amp; climb the charts</h4>
+          <p>Publish and your music appears in the Tunelo app for everyone. Watch your plays grow on the Daily Top 50.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Charts -->
+  <section id="charts" class="charts-wrap">
+    <div class="container">
+      <div class="section-head">
+        <h2>The Tunelo <span class="grad-text">Daily Top 50</span></h2>
+        <p>See which artists, albums, and songs listeners can't stop replaying — refreshed every day.</p>
+      </div>
+      <div class="chart-preview">
+        <div class="chart-card" id="chartCard">
+          <div class="chart-row">
+            <span class="chart-rank">1</span>
+            <span class="chart-art">🎧</span>
+            <span class="chart-meta"><b>Midnight Drive</b><span>Aurora Skies · Lo-Fi</span></span>
+            <span class="chart-plays">— plays</span>
+          </div>
+          <div class="chart-row">
+            <span class="chart-rank">2</span>
+            <span class="chart-art">🎸</span>
+            <span class="chart-meta"><b>Neon Highway</b><span>Neon Vibes · Electronic</span></span>
+            <span class="chart-plays">— plays</span>
+          </div>
+          <div class="chart-row">
+            <span class="chart-rank">3</span>
+            <span class="chart-art">🎹</span>
+            <span class="chart-meta"><b>Paper Planes</b><span>Midnight Cassette · Indie</span></span>
+            <span class="chart-plays">— plays</span>
+          </div>
+          <div class="chart-row">
+            <span class="chart-rank">4</span>
+            <span class="chart-art">🎤</span>
+            <span class="chart-meta"><b>City Lights</b><span>Echo Park · Pop</span></span>
+            <span class="chart-plays">— plays</span>
+          </div>
+          <div class="chart-row">
+            <span class="chart-rank">5</span>
+            <span class="chart-art">🥁</span>
+            <span class="chart-meta"><b>Slow Burn</b><span>Velvet Room · R&amp;B</span></span>
+            <span class="chart-plays">— plays</span>
+          </div>
+          <!-- Coming-soon overlay -->
+          <div class="chart-soon" id="chartSoon">
+            <span class="badge">📊 Charts coming soon</span>
+            <p>As listeners and artists join, the real Daily Top 50 goes live here — ranked by actual plays and likes. Be one of the first artists on the board.</p>
+            <a href="https://d1fr34e73b4to8.cloudfront.net/artist/index.html" class="btn btn-primary">🎙️ Get your music in</a>
+          </div>
+        </div>
+        <p class="chart-note">Updated daily · ranked by real plays &amp; likes once we launch.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="pricing-wrap">
+    <div class="container">
+      <div class="section-head">
+        <h2>Simple, honest pricing.</h2>
+        <p>Start with a full month free. Cancel anytime.</p>
+      </div>
+      <div class="free-banner">🎁 Every new listener gets <b>1 month completely free</b> — no charge until it ends.</div>
+      <div class="plans">
+        <div class="plan">
+          <h3>6 Months</h3>
+          <div class="price">₹399</div>
+          <div class="save">Save 16% vs monthly</div>
+          <ul>
+            <li>Everything in Tunelo</li>
+            <li>Offline listening</li>
+            <li>Data-Saver mode</li>
+            <li>Ad-free</li>
+          </ul>
+          <a href="#download" class="btn btn-ghost">Choose plan</a>
+        </div>
+        <div class="plan featured">
+          <span class="plan-tag">BEST VALUE</span>
+          <h3>1 Year</h3>
+          <div class="price">₹799</div>
+          <div class="save">Save 16% · ~₹67/month</div>
+          <ul>
+            <li>Everything in Tunelo</li>
+            <li>Offline listening</li>
+            <li>Data-Saver mode</li>
+            <li>Ad-free · priority features</li>
+          </ul>
+          <a href="#download" class="btn btn-primary">Choose plan</a>
+        </div>
+        <div class="plan">
+          <h3>Monthly</h3>
+          <div class="price">₹79<small>/mo</small></div>
+          <div class="save">Flexible · cancel anytime</div>
+          <ul>
+            <li>Everything in Tunelo</li>
+            <li>Offline listening</li>
+            <li>Data-Saver mode</li>
+            <li>Ad-free</li>
+          </ul>
+          <a href="#download" class="btn btn-ghost">Choose plan</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Download -->
+  <section id="download">
+    <div class="container">
+      <div class="section-head">
+        <h2>Your music journey starts here.</h2>
+        <p>Tunelo is launching soon on the App Store and Google Play. Be the first to know.</p>
+      </div>
+      <div style="display:flex; gap:14px; justify-content:center; flex-wrap:wrap;">
+        <a href="mailto:support@tunelo.live?subject=Notify%20me%20when%20Tunelo%20launches" class="btn btn-primary">🔔 Notify me at launch</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <a href="/" class="logo"><span class="logo-mark-img"></span><span>Tunelo</span></a>
+        <div class="footer-links">
+          <a href="#features">Features</a>
+          <a href="#artists">For Artists</a>
+          <a href="https://d1fr34e73b4to8.cloudfront.net/artist/index.html">Artist Studio</a>
+          <a href="#charts">Charts</a>
+          <a href="#pricing">Pricing</a>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+          <a href="mailto:support@tunelo.live">support@tunelo.live</a>
+        </div>
+      </div>
+      <p class="copyright">© 2026 Tunelo. All rights reserved. Made with ♪ for music lovers.</p>
+    </div>
+  </footer>
+
+  <!-- Welcome popup: show once per visitor -->
+  <script>
+    (function () {
+      var KEY = 'tunelo_welcomed';
+      var overlay = document.getElementById('welcome');
+      if (!overlay) return;
+      function close() { overlay.classList.remove('show'); try { localStorage.setItem(KEY, '1'); } catch (e) {} }
+      try {
+        if (!localStorage.getItem(KEY)) {
+          setTimeout(function () { overlay.classList.add('show'); }, 900);
+        }
+      } catch (e) {}
+      document.getElementById('welcomeClose').addEventListener('click', close);
+      overlay.addEventListener('click', function (e) { if (e.target === overlay) close(); });
+      Array.prototype.forEach.call(document.querySelectorAll('[data-welcome-dismiss]'), function (el) {
+        el.addEventListener('click', close);
+      });
+    })();
+  </script>
+
+  <!-- Real artists from the Tunelo backend -->
+  <script id="artists-live">
+    (function(){
+      var API='https://1y516t1epd.execute-api.ap-south-1.amazonaws.com/v1';
+      function esc(s){var d=document.createElement('div');d.textContent=s==null?'':String(s);return d.innerHTML;}
+      fetch(API+'/artists').then(function(r){return r.json();}).then(function(d){
+        if(!d||!d.items||!d.items.length)return;
+        var el=document.getElementById('artistCards');if(!el)return;
+        el.innerHTML=d.items.slice(0,6).map(function(a){
+          var pic=a.photoUrl
+            ? '<div class="artist-pic" style="background-image:url('+esc(a.photoUrl)+');background-size:cover;background-position:center"></div>'
+            : '<div class="artist-pic">🎵</div>';
+          return '<div class="artist-card">'+pic+'<div class="ac-meta"><b>'+esc(a.name)+'</b><span>'+(esc(a.bio)||'Independent artist')+'</span></div>'
+            +'<span class="ac-count">'+a.songCount+' song'+(a.songCount==1?'':'s')+'</span></div>';
+        }).join('');
+      }).catch(function(){});
+    })();
+  </script>
+
+  <!-- Live charts from the Tunelo backend -->
+  <script id="charts-live">
+    (function () {
+      var API = 'https://1y516t1epd.execute-api.ap-south-1.amazonaws.com/v1';
+      function esc(s){var d=document.createElement('div');d.textContent=s==null?'':String(s);return d.innerHTML;}
+      fetch(API + '/charts').then(function(r){return r.json();}).then(function(d){
+        if (!d || !d.items || !d.items.length) return;
+        var card = document.getElementById('chartCard');
+        var soon = document.getElementById('chartSoon');
+        if (soon) soon.style.display = 'none';
+        var html = '';
+        d.items.slice(0, 10).forEach(function (t) {
+          var plays = (t.plays || 0).toLocaleString();
+          var sub = esc(t.artist) + (t.genre ? ' · ' + esc(t.genre) : '');
+          html += '<div class="chart-row">'
+            + '<span class="chart-rank">' + t.rank + '</span>'
+            + '<span class="chart-art">🎵</span>'
+            + '<span class="chart-meta"><b>' + esc(t.title) + '</b><span>' + sub + '</span></span>'
+            + '<span class="chart-plays">' + plays + ' plays</span>'
+            + '</div>';
+        });
+        if (card) card.innerHTML = html;
+        var note = document.querySelector('.chart-note');
+        if (note) note.textContent = 'Live · Top songs by real plays · updated daily';
+      }).catch(function(){});
+    })();
+  </script>
+</body>
+</html>
